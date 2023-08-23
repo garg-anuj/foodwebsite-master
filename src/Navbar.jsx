@@ -17,10 +17,12 @@ const Navbar = () => {
   const [intialNavBar, setNavBar] = useState(false);
   const [stopScroll, setScrollTop] = useState(false);
 
+  //! ---Context data----------------------------------------
   // const consumeCartCountContextData = useContext(useCartCountContext);
   // console.log(consumeCartCountContextData.cartCount)
   const {cartCount} = useContext(useCartCountContext)
   console.log(cartCount.count)
+    //! -------------------------------------------
  
   // const [noTable, setTable] = useState(false);
 

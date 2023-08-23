@@ -1,41 +1,59 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { getCartList,order,totalQuantity } from "./utils/helper.js";
+import useCartCountContext from "./utils/useCartCountContext.js"
 
 const Popularity = (props) => {
-
-  const getCartList = ()=>{
-    let list = localStorage.getItem('cartList')
-    if(list){
-      return JSON.parse(list);
-    }else{
-      return []}
-  }
+// !------Helper.js-------------------------------------------
+  // const getCartList = ()=>{
+  //   let list = localStorage.getItem('cartList')
+  //   if(list){
+  //     return JSON.parse(list);
+  //   }else{
+  //     return []}
+  // }
+  // !------End------------------------------------------
 
   // console.log('popularity= ', props.sources)
   const data= props.sources;
 
   const [orderId, setOrderId] = useState(getCartList);
+  const {cartCount} = useContext(useCartCountContext);
+  console.log(cartCount);
+
+  // cartCount.setCardQuantity({count:total})
 
 
+  const total = totalQuantity(orderId);
+  // console.log(cartCount.setCardQuantity(total));
+
+
+  console.log(total)
+
+
+  // !------Helper.js-------------------------------------------
+// const order = order()
 
   // get id of the card component by clicking order_Btn
-  const order=(order_data)=>{
-    // const order=(btn_id)=>{
-    // console.log('getting id= ', btn_id)
+  // const order=(order_data)=>{
+  //   // const order=(btn_id)=>{
+  //   // console.log('getting id= ', btn_id)
 
-    // const getingdata= data.find((ele)=>{
-    //     return btn_id === ele.id
-    //   })
-    // console.log(getingdata)
-    // setOrderId((old)=>{
-    //   return [...old, getingdata ]
-    // })
-    // setOrderId([...orderId,{...getingdata,quantity:1}])
+  //   // const getingdata= data.find((ele)=>{
+  //   //     return btn_id === ele.id
+  //   //   })
+  //   // console.log(getingdata)
+  //   // setOrderId((old)=>{
+  //   //   return [...old, getingdata ]
+  //   // })
+  //   // setOrderId([...orderId,{...getingdata,quantity:1}])
 
-    setOrderId([...orderId,{...order_data,quantity:1}])
+  //   setOrderId([...orderId,{...order_data,quantity:1}])
    
-    console.log(orderId.quantity,orderId)
+  //   console.log(orderId.quantity,orderId)
 
-  }
+  // }
+
+  // !------End------------------------------------------
 
 
 // now we will set these value in to the local storage 
@@ -66,7 +84,7 @@ const Popularity = (props) => {
             </div>
 
             {/* <a href="#" className="btn">order now</a> */}
-            <div className="btn" onClick={()=>order(item)}>order now</div>
+            <div className="btn" onClick={()=>order(item,orderId,setOrderId,total,cartCount.setCardQuantity)}>order now</div>
           </div>
           )
         })}

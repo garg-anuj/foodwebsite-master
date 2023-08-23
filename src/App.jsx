@@ -27,10 +27,10 @@ const App= ()=> {
   const [cartQuantity, setCardQuantity] = useState({count:9})
   return (
     <main>
-    <useCartCountContext.Provider value={{cartCount:{count:cartQuantity.count}}}>
+    <useCartCountContext.Provider value={{cartCount:{count:cartQuantity.count,setCardQuantity:setCardQuantity}}}>
     {/* //means we need Card quantity undate only in this NavBar */}
         <Navbar />  
-    </useCartCountContext.Provider>
+  
 
       <Routes>
           {/* <Route exact path='/home' element={<Home />} /> */}
@@ -49,6 +49,7 @@ const App= ()=> {
       </Routes> 
 
       <Footer />
+    </useCartCountContext.Provider>  
     </main>
   )
 }
