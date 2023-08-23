@@ -17,7 +17,7 @@ const Popularity = (props) => {
 
 
 
-  // get id of the component by clicking order_Btn
+  // get id of the card component by clicking order_Btn
   const order=(order_data)=>{
     // const order=(btn_id)=>{
     // console.log('getting id= ', btn_id)
@@ -36,6 +36,8 @@ const Popularity = (props) => {
     console.log(orderId.quantity,orderId)
 
   }
+
+
 // now we will set these value in to the local storage 
   useEffect(()=>{
     localStorage.setItem('cartList',JSON.stringify(orderId))
@@ -48,25 +50,25 @@ const Popularity = (props) => {
       <div className="box-container">
 
         
-        {data.map((item)=>{
-          return <>
-          <div className="box">
-          <span className="price"> ₹ {item.price} </span>
-          <img src={item.img} alt="" />
-          <h3>{item.name}</h3>
-          
-          <div className="stars">
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="far fa-star"></i>
-          </div>
+        {data.map((item,index)=>{
+          return (
+          <div className="box" key={`popularity${index}`}>
+            <span className="price"> ₹ {item.price} </span>
+            <img src={item.img} alt="" />
+            <h3>{item.name}</h3>
+            
+            <div className="stars">
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="fas fa-star"></i>
+              <i className="far fa-star"></i>
+            </div>
 
-          {/* <a href="#" className="btn">order now</a> */}
-          <div className="btn" onClick={()=>order(item)}>order now</div>
+            {/* <a href="#" className="btn">order now</a> */}
+            <div className="btn" onClick={()=>order(item)}>order now</div>
           </div>
-          </>
+          )
         })}
 
 
