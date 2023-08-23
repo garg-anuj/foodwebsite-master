@@ -20,16 +20,6 @@ const Popularity = (props) => {
   const {cartCount} = useContext(useCartCountContext);
   console.log(cartCount);
 
-  // cartCount.setCardQuantity({count:total})
-
-
-  // const total = totalQuantity(orderId);
-  // // console.log(cartCount.setCardQuantity(total));
-
-
-  // console.log(total)
-
-
   // !------Helper.js-------------------------------------------
 // const order = order()
 

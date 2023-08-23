@@ -27,7 +27,7 @@ export function order(order_data,orderId,setOrderId,setCardQuantity,totalQuantit
       setOrderId([...orderId,{...order_data,quantity:1}])
       setCardQuantity({count:totalQuantity(orderId)})
      
-      console.log(orderId.quantity,orderId)
+      console.log(order_data,orderId)
   }
 
   // !-----Total quantity---------------------------------------------------------

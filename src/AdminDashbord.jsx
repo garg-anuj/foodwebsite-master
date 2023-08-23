@@ -39,8 +39,8 @@ const AdminDashbord =({newSrc ,sendFn})=>{
         </thead>
 
         <tbody>
-        {fooddata.map((itemVelues)=>{
-             return <AdminTable name={itemVelues.name} emails={itemVelues.email}  foodnames={itemVelues.foodname} contacts={itemVelues.phone} addresses={itemVelues.textarea}  />
+        {fooddata.map((itemVelues,index)=>{
+             return <AdminTable key={`table${index}`} name={itemVelues.name} emails={itemVelues.email}  foodnames={itemVelues.foodname} contacts={itemVelues.phone} addresses={itemVelues.textarea}  />
         })}
             <tr className="active-row">
             <td>raman</td>
