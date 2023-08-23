@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Gallery = ({sources}) => {
-    // console.log(sources)
    const data = sources;
 
   return (
