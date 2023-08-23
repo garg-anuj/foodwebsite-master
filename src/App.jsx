@@ -24,7 +24,7 @@ import useCartCountContext from './utils/useCartCountContext';
 // import AdminDashbord from './AdminDashbord';
 
 const App= ()=> {
-  const [cartQuantity, setCardQuantity] = useState({count:9})
+  const [cartQuantity, setCardQuantity] = useState({count:0})
   return (
     <main>
     <useCartCountContext.Provider value={{cartCount:{count:cartQuantity.count,setCardQuantity:setCardQuantity}}}>

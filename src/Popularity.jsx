@@ -23,11 +23,11 @@ const Popularity = (props) => {
   // cartCount.setCardQuantity({count:total})
 
 
-  const total = totalQuantity(orderId);
-  // console.log(cartCount.setCardQuantity(total));
+  // const total = totalQuantity(orderId);
+  // // console.log(cartCount.setCardQuantity(total));
 
 
-  console.log(total)
+  // console.log(total)
 
 
   // !------Helper.js-------------------------------------------
@@ -84,7 +84,7 @@ const Popularity = (props) => {
             </div>
 
             {/* <a href="#" className="btn">order now</a> */}
-            <div className="btn" onClick={()=>order(item,orderId,setOrderId,total,cartCount.setCardQuantity)}>order now</div>
+            <div className="btn" onClick={()=>order(item,orderId,setOrderId,cartCount.setCardQuantity,totalQuantity)}>order now</div>
           </div>
           )
         })}

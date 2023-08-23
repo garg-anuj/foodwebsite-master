@@ -11,7 +11,7 @@ export const getCartList = ()=>{
 
 //! ---Popular.js-----------------------------------------------------------------------------------
     // get id of the card component by clicking order_Btn
-export function order(order_data,orderId,setOrderId,total,setCardQuantity){
+export function order(order_data,orderId,setOrderId,setCardQuantity,totalQuantity){
       // const order=(btn_id)=>{
       // console.log('getting id= ', btn_id)
   
@@ -25,7 +25,7 @@ export function order(order_data,orderId,setOrderId,total,setCardQuantity){
       // setOrderId([...orderId,{...getingdata,quantity:1}])
   
       setOrderId([...orderId,{...order_data,quantity:1}])
-      setCardQuantity({count:total})
+      setCardQuantity({count:totalQuantity(orderId)})
      
       console.log(orderId.quantity,orderId)
   }
